@@ -7,6 +7,8 @@
 - Generate canonical and isomeric SMILES representations.
 - Visualize molecular structures by drawing them as images.
 
+![SmilesConverter](images/output.png)
+
 ---
 
 ## What is SMILES?
@@ -61,7 +63,7 @@ For more detailed information, refer to the [Daylight Theory Manual on SMILES](h
 
 ## Running the Application
 
-1. **Compile and Run**:
+**Compile and Run**:
 
    Open a terminal in the project directory and execute:
 
@@ -69,71 +71,33 @@ For more detailed information, refer to the [Daylight Theory Manual on SMILES](h
    sbt run
    ```
 
-2. **Application Interaction**:
-
-    - Upon running, the application will prompt:
-
-      ```
-      Enter molecule name or SMILES notation:
-      ```
-
-    - Input a chemical name or a SMILES string.
-
-3. **Example Inputs**:
-
-    - **Chemical Name**: `aspirin`
-    - **SMILES Notation**: `C1=CC=CC=C1` (benzene)
-
 ---
 
 ## Usage Examples
 
-### Example 1: Chemical Name to SMILES Conversion
+### Example: Chemical Name to SMILES Conversion
 
 **Input**:
 
 ```
 Enter molecule name or SMILES notation:
-aspirin
+glucose
 ```
 
 **Output**:
 
 ```
-SMILES notation: CC(=O)OC1=CC=CC=C1C(=O)O
-Canonical SMILES: CC(=O)OC1=CC=CC=C1C(=O)O
-Isomeric SMILES: CC(=O)OC1=CC=CC=C1C(=O)O
+SMILES notation: O=C[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO
+Canonical SMILES: O=CC(O)C(O)C(O)C(O)CO
+Isomeric SMILES: C(=O)[C@@H]([C@H]([C@@H]([C@@H](CO)O)O)O)O
 Molecule image saved as output.png
 ```
 
 - **Description**:
 
-    - The application converts "aspirin" into its SMILES notation.
+    - The application converts "glucose" into its SMILES notation.
     - Generates canonical and isomeric SMILES (identical in this case due to lack of stereochemistry).
     - Saves the molecular structure as `output.png`.
-
-### Example 2: SMILES to Molecule Visualization
-
-**Input**:
-
-```
-Enter molecule name or SMILES notation:
-C1CCCCC1
-```
-
-**Output**:
-
-```
-Canonical SMILES: C1CCCCC1
-Isomeric SMILES: C1CCCCC1
-Molecule name: Name generation not implemented.
-Molecule image saved as output.png
-```
-
-- **Description**:
-
-    - Parses the SMILES for cyclohexane.
-    - Generates canonical and isomeric SMILES.
 
 ---
 
